@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo-checker"
+version = "0.1.0"
+description = "Tray app that monitors git repos and fast-forward pulls them when it is safe"
+requires-python = ">=3.11"
+dependencies = [
+    "PyQt6>=6.6.0",
+    "tomli-w>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+repo-checker = "repo_checker.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
